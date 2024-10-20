@@ -22,9 +22,15 @@ def generate_questions_from_pdfs(pdf_files, query):
     return questions
 
 if __name__ == "__main__":
-    pdf_files = ["C:/Users/borra/OneDrive/Desktop/pdf_folder/chess1.pdf"]  # Replace with your PDF file paths
+    pdf_files = ["./pdf_folder/girlmeetsboy1.pdf",
+                 "./pdf_folder/girlmeetsboy.pdf",
+                 "./pdf_folder/chess1.pdf",
+                 ]  # Replace with your PDF file paths
     query = "Explain the concept of deep learning."
     questions = generate_questions_from_pdfs(pdf_files, query)
 
-    for q in questions:
+    # Generate questions from documents
+    generated_questions = generate_questions(questions)
+
+    for q in generated_questions:
         print("Generated Question:", q)  # Directly print q since it is a string
